@@ -1,9 +1,9 @@
-import { Router } from 'express';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import config from 'config';
-import { check, validationResult } from 'express-validator';
-import User from '../models/User.js';
+const {Router} = require('express')
+const bcrypt = require('bcryptjs')
+const config = require('config')
+const jwt = require('jsonwebtoken')
+const {check, validationResult} = require('express-validator')
+const User = require('../models/User')
 
 const router = Router();
 
@@ -17,6 +17,7 @@ router.post(
     ],
     async (req, res) => {
         try {
+
             const error = validationResult(req);
             if(!error.isEmpty()){
                 return res.status(400).json({
@@ -77,6 +78,8 @@ router.post(
                 config.get('jwtSecret'),
                 {expiresIn: '1h'}
             )
+
+            res.json({token, userId: user.id});
            
 
         } catch (e) {
