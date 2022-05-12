@@ -1,15 +1,16 @@
 import React from 'react'
-import { OneMorePage } from './pages/OneMorePage'
+import { AutosPage } from './pages/AutosPage'
+import { AccountPage } from './pages/AccountPage'
 import { Link, Navigate, Route, Routes, } from 'react-router-dom'
 import { AuthPage } from './pages/AuthPage'
 
 const useRoutes = isAuth => {
     if (isAuth) {
-        console.log("yam");
         return (
             <Routes>
-                <Route path="/onemore/*" element={<OneMorePage />} />
-                <Route path="*" element={<Navigate to="/onemore" replace />}/>
+                <Route path="/autos/*" element={<AutosPage />} />
+                <Route path="/account" element={<AccountPage />} />
+                <Route path="*" element={<Navigate to="/autos" replace />}/>
             </Routes>
         )
     }
