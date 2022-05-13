@@ -7,7 +7,7 @@ export const AutosList = ({ autos }) => {
     }
     return (
 
-        <table style={{marginTop: '2rem'}}>
+        <table className="hoverable centered" style={{marginTop: '2rem', borderCollapse: 'collapse', borderRadius: '10px', overflow: 'hidden'}}>
             <thead className="grey lighten-4">
                 <tr>
                     <th>№</th>
@@ -18,7 +18,7 @@ export const AutosList = ({ autos }) => {
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody className="amber lighten-4">
                 {autos.map((auto,index) => {
                     return (
                         <tr key={auto._id}>
@@ -27,7 +27,7 @@ export const AutosList = ({ autos }) => {
                             <td>{auto.model}</td>
                             <td>{auto.kind}</td>
                             <td>
-                                <NavLink to={`/${auto._id}`}>Открыть данные</NavLink>
+                                <NavLink to={`/autos/${auto._id}`}>Открыть данные</NavLink>
                             </td>
                         </tr>
                     )})}

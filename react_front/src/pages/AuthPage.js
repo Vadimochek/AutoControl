@@ -20,6 +20,7 @@ export const AuthPage = () => {
     useEffect(() => {
         window.M.updateTextFields()
     }, [])
+    
     const changeHandler = event => {
         setForm( {...form, [event.target.name]: event.target.value})
     }
@@ -43,8 +44,8 @@ export const AuthPage = () => {
 
     return (
         <div className="row">
-            <div className="col s6 offset-s3">
-                <div className="card blue-grey darken-1">
+            <div className="col s6 offset-s3 center" style={{marginTop: '10%'}}>
+                <div className="card cyan darken-4 z-depth-1 hoverable">
                     <div className="card-content white-text">
                         <span className="card-title">Авторизация</span>
                         <div className="input-field">
