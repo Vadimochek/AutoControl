@@ -1,7 +1,7 @@
 import React from 'react'
 import { AutosPage } from './pages/AutosPage'
 import { AccountPage } from './pages/AccountPage'
-import { Link, Navigate, Route, Routes, } from 'react-router-dom'
+import { Navigate, Route, Routes, } from 'react-router-dom'
 import { AuthPage } from './pages/AuthPage'
 import { CarPage } from './pages/CarPage'
 
@@ -10,8 +10,8 @@ const useRoutes = isAuth => {
         return (
             <Routes>
                 <Route path="/autos" element={<AutosPage />} />
-                <Route path="/account" element={<AccountPage />} />
                 <Route path="/autos/:id" element={<CarPage />} />
+                <Route path="/account" element={<AccountPage />} />
                 <Route path="*" element={<Navigate to="/autos" replace />}/>
             </Routes>
         )

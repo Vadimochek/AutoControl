@@ -17,7 +17,7 @@ if (!loading){
 
   return (
     <AuthContext.Provider value={{
-      token, login,logout,userId, isAuthenticated
+      token, login, logout, userId, isAuthenticated
     }}>
     <BrowserRouter>
     {isAuthenticated && <Navbar />}

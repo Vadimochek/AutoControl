@@ -17,7 +17,7 @@ router.get('/', authMiddle, async (req, res) => {
 
 router.get('/:id', authMiddle, async (req, res) => {
     try {
-        const auto = await Auto.findById(req.params.id)////
+        const auto = await Auto.findById(req.params.id)
         res.json(auto)
     } catch (e) {
         res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' });

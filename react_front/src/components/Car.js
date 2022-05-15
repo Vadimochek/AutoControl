@@ -2,8 +2,10 @@ import React from "react";
 
 export const Car = ({ car }) => {
     return (
-        <div className="center">
-            <p>Машина {car.model}, марки {car.kind}. Номер: {car.number}</p>
+        <div>
+             <blockquote>
+            <p>Машина <b>{car.model}</b>, марки  <b>{car.kind}</b>. Номер: <b>{car.number}.</b></p>
+            </blockquote>
         </div>
     )
 }

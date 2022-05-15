@@ -4,24 +4,25 @@ import { AuthContext } from "../context/AuthContext"
 import { useHttp } from "../hooks/htttp.hook"
 import { Car } from "../components/Car"
 import { useParams } from 'react-router-dom'
-import Geo from "../components/Geo"
-import Inside from "../components/Inside"
+import { Geo } from "../components/Geo"
+import { Inside } from "../components/Inside"
 
 
 export const CarPage = () => {
-    const [car, setCar] = useState([])
+    const [auto, setAuto] = useState([])
     const [geo, setGeo] = useState([])
     const [inside, setInside] = useState([])
     const { token } = useContext(AuthContext)
     const carId = useParams().id
     const { request, loading } = useHttp()
 
-    const getCar = useCallback(async () => {
+    const getAuto = useCallback(async () => {
         try {
             const fetched = await request(`/api/autos/${carId}`, 'GET', null, {
                 Authorization: `Bearer ${token}`
             })
-            setCar(fetched)
+            setAuto(fetched)
+            console.log(fetched)
         } catch (e) {
 
         }
@@ -29,44 +30,46 @@ export const CarPage = () => {
 
     const getGeo = useCallback(async () => {
         try {
-            const fetched = await request(`/api/info/geo`, 'GET', null, {
+            const fetched = await request(`/api/info/geo/${carId}`, 'GET', null, {
                 Authorization: `Bearer ${token}`
             })
             setGeo(fetched)
         } catch (e) {
 
         }
-    }, [token, request])
+    }, [token, carId, request])
 
     const getInside = useCallback(async () => {
         try {
-            const fetched = await request(`/api/info/inside`, 'GET', null, {
+            const fetched = await request(`/api/info/inside/${carId}`, 'GET', null, {
                 Authorization: `Bearer ${token}`
             })
+            console.log(fetched)
             setInside(fetched)
         } catch (e) {
 
         }
-    }, [token, request])
+    }, [token,carId, request])
 
     useEffect(() => {
-        getCar()
+        getAuto()
         getGeo()
         getInside()
-    }, [getCar, getGeo, getInside])
+    }, [getAuto, getGeo, getInside])
 
     if (loading) {
         return <Loader />
     }
+
     return (
-        <div className="row">
-            <div className="col s12">
-                {!loading && <Car car={car} />}
+        <div className="row center">
+            <div className="col s12 flow-text" style={{marginTop: '2%'}}>
+                {!loading && <Car car={auto} />}
             </div>
-            <div class="col s6">
+            <div className="col s5 lime lighten-3" style={{borderRadius: '5%'}}>
                 {!loading && <Geo geo={geo} />}
             </div>
-            <div class="col s6">
+            <div className="col s5 offset-s2 lime lighten-3" style={{borderRadius: '1%'}}>
                 {!loading && <Inside inside={inside} />}
             </div>
         </div>
