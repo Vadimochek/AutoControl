@@ -3,9 +3,7 @@ import React from "react";
 export const Car = ({ car }) => {
     return (
         <div>
-             <blockquote>
-            <p>Машина <b>{car.model}</b>, марки  <b>{car.kind}</b>. Номер: <b>{car.number}.</b></p>
-            </blockquote>
+            <p style={{color: "snow"}}>Автомобиль <b>{car.model} {car.kind}</b>. Регистрационный номер: <b>{car.number}</b>.</p>
         </div>
     )
 }

@@ -66,10 +66,10 @@ export const CarPage = () => {
             <div className="col s12 flow-text" style={{marginTop: '2%'}}>
                 {!loading && <Car car={auto} />}
             </div>
-            <div className="col s5 lime lighten-3" style={{borderRadius: '5%'}}>
+            <div className="col s6 yellow lighten-2" style={{borderRadius: '3%'}}>
                 {!loading && <Geo geo={geo} />}
             </div>
-            <div className="col s5 offset-s2 lime lighten-3" style={{borderRadius: '1%'}}>
+            <div className="col s5 offset-s1 yellow lighten-2" style={{borderRadius: '3%'}}>
                 {!loading && <Inside inside={inside} />}
             </div>
         </div>

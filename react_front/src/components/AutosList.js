@@ -7,7 +7,7 @@ export const AutosList = ({ autos }) => {
     }
     return (
 
-        <table className="hoverable centered" style={{marginTop: '2rem', borderCollapse: 'collapse', borderRadius: '10px', overflow: 'hidden'}}>
+        <table className="hoverable centered" style={{marginTop: '2rem', borderCollapse: 'collapse', borderRadius: '10px', overflow: 'hidden', fontSize: '20px'}}>
             <thead className="grey lighten-4">
                 <tr>
                     <th>№</th>

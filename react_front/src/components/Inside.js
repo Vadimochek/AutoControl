@@ -13,7 +13,7 @@ export const Inside = ({ inside }) => {
     if (!inside.length) {
         return (<>
             <h5><b>Данные внутренних датчиков</b></h5>
-            <p>Ещё нет данных по автомобилю</p>
+            <p style={{fontSize: '20px'}}>Ещё нет данных по автомобилю</p>
         </>
         )
     }
@@ -27,7 +27,7 @@ export const Inside = ({ inside }) => {
             plotBorderWidth: 0,
             plotShadow: false,
             height: "60%",
-            backgroundColor: "rgba(230, 238, 156, 1)",
+            backgroundColor: "#fff176",
             marginTop: 30
           },
         
@@ -120,7 +120,7 @@ export const Inside = ({ inside }) => {
             plotBorderWidth: 0,
             plotShadow: false,
             height: "60%",
-            backgroundColor: "rgba(230, 238, 156, 1)",
+            backgroundColor: "#fff176",
             marginTop: 30
           },
         
@@ -212,7 +212,7 @@ export const Inside = ({ inside }) => {
             plotBorderWidth: 0,
             plotShadow: false,
             height: "60%",
-            backgroundColor: "rgba(230, 238, 156, 1)",
+            backgroundColor: "#fff176",
             marginTop: 30
           },
         
@@ -304,7 +304,7 @@ export const Inside = ({ inside }) => {
             plotBorderWidth: 0,
             plotShadow: false,
             height: "60%",
-            backgroundColor: "rgba(230, 238, 156, 1)",
+            backgroundColor: "#fff176",
             marginTop: 30
           },
         
@@ -383,7 +383,7 @@ export const Inside = ({ inside }) => {
             plotBorderWidth: 0,
             plotShadow: false,
             height: "60%",
-            backgroundColor: "rgba(230, 238, 156, 1)",
+            backgroundColor: "#fff176",
             marginTop: 30
           },
         
@@ -471,8 +471,8 @@ export const Inside = ({ inside }) => {
         <div>
 
             <h5><b>Данные внутренних датчиков</b></h5>
-            <p>Время обновления данных: <i>{date}  {time}</i></p>
-            <HighchartsReact highcharts={Highcharts} options={oilOpt} />
+            <p style={{fontSize: '20px'}}>Время обновления данных: <i>{date}  {time}</i></p>
+            <HighchartsReact highcharts={Highcharts} options={oilOpt}  />
             <HighchartsReact highcharts={Highcharts} options={benOpt} />
             <HighchartsReact highcharts={Highcharts} options={humOpt} />
             <HighchartsReact highcharts={Highcharts} options={chargeOpt} />

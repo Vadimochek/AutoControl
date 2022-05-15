@@ -43,22 +43,23 @@ export const AuthPage = () => {
     }
 
     return (
-        <div className="row">
+        <div className="row" >
             <div className="col s6 offset-s3 center" style={{marginTop: '10%'}}>
-                <div className="card cyan darken-4 z-depth-1 hoverable">
-                    <div className="card-content white-text">
-                        <span className="card-title">Авторизация</span>
-                        <div className="input-field">
+                <div className="card grey lighten-3 z-depth-1 hoverable" style={{borderRadius: '3%'}}>
+                    <div className="card-content ">
+                        <span className="card-title black-text" style={{fontSize: '30px'}}><b>Авторизация</b></span>
+                        <div className="input-field black-text">
                             <input 
                             id="email" 
                             type="text" 
                             value={form.email}
                             name="email"
+                            style={{ fontSize: '20px' }}
                             onChange={changeHandler} />
                 
-                            <label for="email">Email</label>
+                            <label for="email" style={{ fontSize: '20px', color: 'black' }}>Email</label>
                         </div>
-                        <div className="input-field">
+                        <div className="input-field black-text">
                             <input 
                             id="password" 
                             type="password" 
@@ -66,7 +67,7 @@ export const AuthPage = () => {
                             name="password"
                             onChange={changeHandler}
                             />
-                            <label for="password">Пароль</label>
+                            <label for="password" style={{ fontSize: '20px', color: 'black' }}>Пароль</label>
                         </div>
                     </div>
 
@@ -79,7 +80,7 @@ export const AuthPage = () => {
                         >Войти</button>
     
                         <button 
-                        className="btn grey lighten-1 black-text"
+                        className="btn  light-green accent-3 black-text"
                         onClick={registerHandler}
                         disabled={loading}>Регистрация</button>
 

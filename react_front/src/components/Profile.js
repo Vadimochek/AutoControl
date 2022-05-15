@@ -37,9 +37,9 @@ export const Profile = ({ info }) => {
     }
 
     return (
-        <div className="row">
-            <div className="col s6 offset-s3">
-                <div className="card hoverable">
+        <div className="row" >
+            <div className="col s6 offset-s3" style={{paddingTop: '2%'}}>
+                <div className="card hoverable" >
                     <div className="card-image">
                         <img src="https://a.d-cd.net/YoAAAgLgneA-960.jpg" />
                         <span className="card-title yellow-text"> <b>Личный профиль пользователя</b></span>
@@ -50,11 +50,11 @@ export const Profile = ({ info }) => {
                                 <div className="row">
                                     <div className="input-field col s6">
                                         <input id="email" type="text" placeholder={info.email} value={form.email} name="email"  onChange={changeHandler} />
-                                        <label className="active" for="email" >Изменить Email</label>
+                                        <label className="active" for="email" style={{fontSize: '20px'}} >Изменить Email</label>
                                     </div>
                                     <div className="input-field col s6">
                                         <input id="password" type="password"  name="password" value={form.password} onChange={changeHandler} />
-                                        <label className="active" for="password">Изменить пароль</label>
+                                        <label className="active" for="password" style={{fontSize: '20px'}}>Изменить пароль</label>
                                     </div>
                                 </div>
                                 <button className="btn waves-effect waves-light right" type="submit" name="action" disabled={loading} onClick={updateHandler}><i class="material-icons">Изменить</i>
