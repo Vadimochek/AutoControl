@@ -470,9 +470,8 @@ export const Inside = ({ inside }) => {
     return (
         <div>
 
-            <h5><b>Данные местоположения</b></h5>
-            <p>Время обновления данных: {date}  {time}</p>
-            {/* <HighchartsReact highcharts={Highcharts} options={options} /> */}
+            <h5><b>Данные внутренних датчиков</b></h5>
+            <p>Время обновления данных: <i>{date}  {time}</i></p>
             <HighchartsReact highcharts={Highcharts} options={oilOpt} />
             <HighchartsReact highcharts={Highcharts} options={benOpt} />
             <HighchartsReact highcharts={Highcharts} options={humOpt} />
