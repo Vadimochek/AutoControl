@@ -12,7 +12,7 @@ app.use('/api/profile', require('./routes/user.routes'))
 app.use('/api/info', require('./routes/info.routes'))
 
 
-const PORT = config.get('port') || 5000;
+const PORT = process.env.PORT || 5000;
 
 
 async function start() {
