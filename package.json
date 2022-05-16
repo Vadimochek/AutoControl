@@ -1,5 +1,5 @@
 {
-  "name": "react_back",
+  "name": "project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,8 +8,8 @@
     "server": "nodemon index.js",
     "build": "cd react_front && npm run build",
     "install-client": "cd react_front && npm install",
-    "client": "npm run start react_front",
-    "app": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "npm run start --prefix react_front",
+    "app": "concurrently \"npm run start\" \"npm run client\"",
     "heroku-postbuild": "npm run install-client && npm run build"
   },
   "author": "",
