@@ -6,9 +6,11 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
+    "build": "cd react_front && npm run build",
+    "install-client": "cd react_front && npm install",
     "client": "npm run start react_front",
     "app": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+    "heroku-postbuild": "npm run install-client && npm run build"
   },
   "author": "",
   "license": "ISC",
