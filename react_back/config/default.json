@@ -1,5 +1,5 @@
 {
     "port": 5000,
-    "mongoUri": "mongodb://localhost:27017/autobase",
+    "mongoUri": "mongodb+srv://admin:admin@cluster0.kxghy.mongodb.net/autobase?retryWrites=true&w=majority",
     "jwtSecret": "hackers not entry"
 }
